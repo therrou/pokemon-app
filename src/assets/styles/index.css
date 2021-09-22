@@ -3,9 +3,209 @@
 }
 
 body {
+    background-color: #D3D3D3;
+}
+
+
+.pokemon-grid-container {
     padding: 50px;
 }
 
-button {
-    width: 100%;
+.navbar {
+    background-color: #CC0000 !important;
 }
+
+.navbar-brand {
+    color: white !important;
+}
+
+.pagination-buttons-container {
+    display: flex;
+    justify-content: center;
+    margin-top: 10px;
+}
+
+.loader-img {
+    display: flex;
+    height: 100px;
+    margin: 0 auto;
+}
+
+.form-select {
+    width: 20%;
+    margin: 0 20px;
+}
+
+.card {
+    border: 5px solid #D3D3D3;
+    padding: 10px;
+    transition: all 0.3s cubic-bezier(.25,.8,.25,1);
+
+}
+
+.card:hover {
+    box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);
+}
+
+
+.card-body {
+    text-align: center;
+}
+
+.pagination-buttons-bottom-container {
+    display: flex;
+    justify-content: space-evenly;
+    margin-top: 10px;   
+}
+
+.single-card-container {
+    margin-top: 2rem;
+    padding: 0 20%;
+}
+
+@media only screen and (max-width: 600px) {
+    .single-card-container {
+      padding: 0;
+    }
+  }
+
+  .link-container {
+      font-size: 12px;
+      margin-top: 5px;
+      text-align: center
+  }
+
+  .search-form {
+      align-items: center;
+  }
+
+  .search-form label {
+      color: white;
+      margin-left: 20px;
+  }
+
+  .search-form button {
+      margin-left: 20px;
+  }
+
+  .card-footer {
+      background-color: rgba(0,0,0,0.02);
+  }
+
+  .types-container {
+      display: flex;
+      justify-content: space-evenly;
+      margin: 10% 0;
+  }
+
+  .types-container b {
+      align-self: center;
+  }
+
+  .error-message {
+      font-size: 30px;
+      font-weight: bold;
+      margin-top: 30px;
+      text-align: center;
+
+  }
+
+  .type-container {
+      padding: 5px;
+      border-radius: 10px;
+  }
+
+  .grass {
+      background-color: green;
+      color: white;
+  }
+
+  .poison {
+      background-color: magenta;
+      color: black;
+  }
+
+  .fire {
+      background-color: orange;
+      color: white;
+  }
+
+  .flying {
+      background-color: burlywood;
+      color: white;
+  }
+
+  .water {
+      background-color:darkblue;
+      color: white;
+  }
+
+  .bug {
+      background-color: greenyellow;
+      color: black;    
+  }
+
+  .normal {
+      background-color: wheat;
+      color: black;
+  }
+
+  .electric {
+      background-color: yellow;
+      color: black;
+  }
+
+  .ground {
+      background-color: brown;
+      color: white;
+  }
+
+  .fighting {
+      background-color:teal;
+      color: white;
+  }
+
+  .rock {
+      background-color: darkgrey;
+      color: black; 
+  }
+
+  .dark {
+      background-color: darkblue;
+      color: white;
+  }
+
+  .fairy {
+        background-color: pink;
+        color: black;
+  }
+
+  .dragon {
+    background-color: olive;
+    color: white;
+  }
+
+  .ice {
+      background-color: lightblue;
+      color: black;
+  }
+
+  .unknown {
+    background-color: black;
+    color: white;
+  }
+
+  .ghost {
+      background-color: darkorchid;
+      color: white;
+
+  }
+  .steel {
+    background-color: darkslateblue;
+    color: white;
+  }
+
+  .psychic {
+    background-color: yellow;
+    color: black;
+  }

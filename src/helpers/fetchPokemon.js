@@ -12,3 +12,4 @@ export const getPokemon = async (url) => {
     const data = await resp.json();
     return data;
 }
+
