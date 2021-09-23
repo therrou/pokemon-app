@@ -4,7 +4,7 @@
 
 body {
     box-sizing: content-box;
-    background-color: #D3D3D3;
+    background-color: #cacaca;
     height: 100%;
     width: 100%;
 }
@@ -71,6 +71,25 @@ body {
     padding: 0 20%;
 }
 @media only screen and (max-width: 600px) {
+
+    .pokemon-responsive {
+        display:block
+    }
+
+    .col-4 {
+        width: inherit;
+    }
+
+    .col-8 {
+        width: inherit;
+    }
+
+    .col-6 {
+        width: 100%;
+    }
+
+
+
     .single-card-container {
       padding: 0;
     }
@@ -191,6 +210,7 @@ body {
 
   .type-container {
       border-radius: 10px;
+      border: 1px grey solid;
       padding: 5px;
       text-align: center;
   }

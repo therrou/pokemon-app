@@ -29,7 +29,7 @@ export const PokemonView = () => {
         <div className='container pokemon-page-container'>
             {
                 loader ? <img height='150px' src={loaderImg} alt='loader' /> : (
-                    <div className='row mt-5'>
+                    <div className='row pokemon-responsive mt-5'>
                     <div className='col-4'>
                     <a href='/' ><img src={pokemon.sprites.other.dream_world.front_default || pokemon.sprites.front_default} className="img-fluid " alt="{pokemon.name}" /> </a>
                     </div>
@@ -57,12 +57,13 @@ export const PokemonView = () => {
                     }
                     </ul>
                     </div>
+                    <br />
                     <div className='col-6 right-column'>
                         <div className='singlepokemon-type-container'>
-                        <h5> Type: </h5>
+                        <h5> <b> Type:</b> </h5>
                         {pokemon.types.map((type, i) => { return <div  key={type.type.name + i} className={`type-container mt-2 ${type.type.name}`}> {type.type.name.toUpperCase()} </div>})}
                         </div>
-
+                        <br />
                         <div>
                             <h5><b> Abilities:</b> </h5>
                             <ul className='list-group list-group-flush'>
