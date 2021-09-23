@@ -1,11 +1,10 @@
-import React, { useState } from 'react'
+import React, {  useState } from 'react'
 
 
-export const Navbar = ({ filterPokemon }) => {
+export const Navbar = ({filterPokemon}) => {
 
     const [value, setValue] = useState('')
     const [checked, setChecked] = useState('pokemon')
-
 
     const handleChange = (e) => {
         setValue(e.target.value.trim())
@@ -22,13 +21,15 @@ export const Navbar = ({ filterPokemon }) => {
             setValue('')
         }
     }
+
     
     return (
-        <nav className="navbar navbar-light bg-light">
+        <nav data-testid='navBar' className="navbar navbar-light bg-light">
             <div className="container-fluid">
                 <a href='/' className="navbar-brand">Pokemon App </a>
                 <form onSubmit={handleSubmit} className="d-flex search-form">
                 <input 
+                    data-testid='inputField'
                     className="form-control me-2" 
                     type="search"
                     onChange={handleChange}
@@ -38,6 +39,7 @@ export const Navbar = ({ filterPokemon }) => {
 
                   <label htmlFor="name">Name</label>
                   <input
+                     data-testid='RadioButton'
                      type="radio" 
                      onChange={handleRadioButton}
                      id="name" 

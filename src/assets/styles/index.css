@@ -3,16 +3,24 @@
 }
 
 body {
+    box-sizing: content-box;
     background-color: #D3D3D3;
+    height: 100%;
+    width: 100%;
 }
-
 
 .pokemon-grid-container {
     padding: 50px;
 }
 
 .navbar {
-    background-color: #CC0000 !important;
+    background-color: #dc3545 !important;
+}
+
+.col-4 {
+    display: flex;
+    justify-content: center;
+    align-self: center;
 }
 
 .navbar-brand {
@@ -62,17 +70,88 @@ body {
     margin-top: 2rem;
     padding: 0 20%;
 }
-
 @media only screen and (max-width: 600px) {
     .single-card-container {
       padding: 0;
     }
+    
+    .d-flex {
+        display: block !important;
+    }
+    
+    .form-control.me-2 {
+        margin-bottom: 5px;
+    }
+
+    .navbar>.container-fluid {
+        display: block !important;
+        text-align: center;
+    }
+
+    .btn.btn-primary {
+        display: block;
+        margin: 10px auto;
+        width: 80%;
+    }
+    button.btn.btn-danger {
+        font-size: 0;
+    }
+    button:first-child.btn.btn-danger::before {
+        color: white;
+        font-size: 14px;
+        content:"<<<"
+    }
+
+    button:last-child.btn.btn-danger::before {
+        color: white;
+        font-size: 14px;
+        content:">>>"
+    }
+
+    .form-select {
+        width: 30%;
+        margin: 0 5px;
+        font-size: 12px;
+    }
+    .form-select select {
+        -webkit-appearance: none;
+        -moz-appearance: none;
+        text-indent: 1px;
+        text-overflow: '';
+    }
+  }
+
+  .img-fluid {
+    padding: 10px !important;
+}
+
+  .pokemon-page-container {
+      box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+      background-color: white;
+  }
+
+  .right-column {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-around;
+  }
+
+  .singlepokemon-type-container {
+      width: 50%;
+  }
+
+  .display-6 {
+      text-align: center;
   }
 
   .link-container {
       font-size: 12px;
       margin-top: 5px;
       text-align: center
+  }
+
+  .buttonContainer {
+      text-align: center;
   }
 
   .search-form {
@@ -111,22 +190,23 @@ body {
   }
 
   .type-container {
-      padding: 5px;
       border-radius: 10px;
+      padding: 5px;
+      text-align: center;
   }
 
   .grass {
-      background-color: green;
-      color: white;
+      background-color: #D4E1CD;
+      color: black
   }
 
   .poison {
-      background-color: magenta;
+      background-color: #F0D9FF;
       color: black;
   }
 
   .fire {
-      background-color: orange;
+      background-color: #F6AE99;
       color: white;
   }
 
@@ -136,14 +216,16 @@ body {
   }
 
   .water {
-      background-color:darkblue;
-      color: white;
+      background-color:#B5DEFF;
+      color: black;
   }
 
   .bug {
-      background-color: greenyellow;
+      background-color: #C1CFC0;
       color: black;    
   }
+
+ 
 
   .normal {
       background-color: wheat;
@@ -151,17 +233,17 @@ body {
   }
 
   .electric {
-      background-color: yellow;
+      background-color: #FCFFA6;
       color: black;
   }
 
   .ground {
-      background-color: brown;
+      background-color: #5E454B;
       color: white;
   }
 
   .fighting {
-      background-color:teal;
+      background-color:#B5CDA3;
       color: white;
   }
 
@@ -171,7 +253,7 @@ body {
   }
 
   .dark {
-      background-color: darkblue;
+      background-color: #907FA4;
       color: white;
   }
 
@@ -196,7 +278,7 @@ body {
   }
 
   .ghost {
-      background-color: darkorchid;
+      background-color: #BFA2DB;
       color: white;
 
   }
@@ -206,6 +288,6 @@ body {
   }
 
   .psychic {
-    background-color: yellow;
+    background-color: #E7EAB5;
     color: black;
   }

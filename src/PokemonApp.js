@@ -4,14 +4,14 @@ import { fetchAllPokemon, getPokemon } from './helpers/fetchPokemon';
 
 import { Navbar } from './components/Navbar';
 import { PokemonsGrid } from './components/PokemonsGrid';
+import { PokemonCard } from './components/PokemonCard';
 
+import loaderImg from '../src/assets/img/loader.jpg';
 import './assets/styles/index.css'
-import { PokemonScreen } from './components/PokemonScreen';
 
-
-export const PokemonApp = () => {
+export const PokemonApp = () => {  
   //Initial States
-  const [pokemons, setPokemons] = useState([]);
+  const [pokemons, setPokemons] = useState([])
   const [nextPage, setNextPage] = useState('');
   const [prevPage, setPrevPage] = useState('');
   const [loader, setLoader] = useState(true);
@@ -22,6 +22,12 @@ export const PokemonApp = () => {
 
   const URL = `https://pokeapi.co/api/v2/pokemon/?limit=${results}&offset=${offset}`;
 
+  
+  useEffect( () => {
+    const data = localStorage.getItem('pokemonsLocal'); 
+    setPokemons(JSON.parse(data))
+  },[])
+
 
   useEffect( () =>{
     const fetchData = async () => {
@@ -30,9 +36,12 @@ export const PokemonApp = () => {
       setPrevPage(response.previous);
       await loadingPokemon(response.results);
       setLoader(false);
+      // localStorage.setItem('pokemonsLocal', JSON.stringify(pokemons))
     }
     fetchData();
   }, [URL])
+
+
 
   const loadingPokemon = async (data) => {
     const pokemonsData = await Promise.all(data.map(async pokemon => {
@@ -41,6 +50,7 @@ export const PokemonApp = () => {
   }))
   setPokemons(pokemonsData)
 }
+
 
 const filterPokemon = async (query, data) => {
   try {
@@ -93,15 +103,13 @@ const paginationPrev = async () => {
     return (
         <>
         <Navbar  filterPokemon={filterPokemon} />  
-          {loader ? <img className='loader-img'src='https://icon-library.com/images/loading-icon-transparent-background/loading-icon-transparent-background-12.jpg' alt='loader' /> : 
+          {loader ? <img className='loader-img' src={loaderImg} alt='loader' /> : 
             searchPokemon  ? 
                     <div className='container'>
                       {
-                        !errorMessage ? <PokemonScreen searchPokemon={searchPokemon}  /> : <h1 className='error-message'> No results with that name. Try again! </h1>
-                      }
-                      
+                        !errorMessage ? <PokemonCard data-testid='pokemonCard' pokemon={searchPokemon}  /> : <h1 data-testid='errorMessage' className='error-message'> No results with that name. Try again! </h1>
+                      } 
                     </div>
-                  
                   : 
                   <PokemonsGrid  pokemons={pokemons} paginationNext={paginationNext} paginationPrev={paginationPrev} setResults={setResults}/>
           }

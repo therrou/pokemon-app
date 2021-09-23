@@ -1,8 +1,8 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import { PokemonApp } from './PokemonApp';
+import { PokeApp } from './PokeApp';
 
 ReactDOM.render(
-    <PokemonApp />,
+    <PokeApp />,
   document.getElementById('root')
 );

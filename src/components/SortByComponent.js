@@ -9,14 +9,13 @@ export const SortByComponent = ({setSort}) => {
  
     return (
         <>
-               <select onChange={handleChange}  className="form-select" aria-label="Default select example">
+               <select data-testid='selectSort' onChange={handleChange}  className="form-select" aria-label="Default select example">
                     <option value="name">Sort by ID</option>
-                    <option value='id'> Sort by ID Desc.</option>
-                    <option value="z-a">Sort by name Z-A</option>
-                    <option value="height">Sort by Height Asc.</option>
-                    <option value="height-desc">Sort by Height Desc.</option>
-                    <option value="weight">Sort by Weight Asc.</option>
-                    <option value="weight-desc">Sort by Weight Desc.</option>
+                    <option value='id'> Sort by ID desc.</option>
+                    <option value="height">Sort by Height asc.</option>
+                    <option value="height_desc">Sort by Height desc.</option>
+                    <option value="weight">Sort by Weight asc.</option>
+                    <option value="weight_desc">Sort by Weight desc.</option>
                 </select>
         </>
     )   
